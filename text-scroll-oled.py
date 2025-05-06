@@ -24,7 +24,7 @@ def chunk_message(large_message, width=16, rows=2):
         chunks.append("".join(lines).strip())
     return chunks
 
-long_text = "You like the display, the display is cool eh!" 
+long_text = "Look Ma! I made changes to the code! " * 5  # Example long text
 messages = chunk_message(long_text)
 
 def type_message(message, typing_delay=0.1):
