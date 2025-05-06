@@ -24,7 +24,7 @@ def chunk_message(large_message, width=16, rows=2):
     return chunks
 
 # Example long text
-long_text = "Look up ^                       " * 5
+long_text = "Look up ^       Good boy...     " * 5
 messages = chunk_message(long_text)
 
 def type_message(message, typing_delay=0.1):
