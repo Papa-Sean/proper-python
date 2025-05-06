@@ -11,9 +11,8 @@ def main():
     device.contrast(0x80)
 
     message = (
-        "What up doe, this is a long message that will continue to scroll... "
-        "Eventually this will pull info from a server that can be updated by a "
-        "website so display messages can be changed remotely!"
+        "         "
+        "Fuck off... I got work to do... "
     )
 
     while True:
