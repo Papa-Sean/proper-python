@@ -11,7 +11,7 @@ def main():
     device.contrast(0x80)
 
     message = (
-        "         "
+        "     "
         "Fuck off... I got work to do... "
     )
 
