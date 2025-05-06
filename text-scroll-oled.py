@@ -18,62 +18,42 @@ def chunk_message(large_message, width=16, rows=2):
     chunks = []
     for i in range(0, len(wrapped), rows):
         lines = wrapped[i:i+rows]
-        # Pad lines to ensure consistent width
         for idx, line in enumerate(lines):
             lines[idx] = line.ljust(width)
         chunks.append("".join(lines).strip())
     return chunks
 
-long_text = "Look Ma! I made changes to the code! " * 5  # Example long text
+# Example long text
+long_text = "This message will continue to loop through until you tell it to stop! Now I am hoping to make a script that will run both files?" * 5
 messages = chunk_message(long_text)
 
 def type_message(message, typing_delay=0.1):
-    """Display the message with a typing animation effect"""
     lcd.clear()
-    row = 0
-    col = 0
-    
+    row, col = 0, 0
     for char in message:
-        # Check if we need to move to the second line
         if col >= 16:
             row = 1
             col = 0
             lcd.cursor_pos = (row, col)
-        
-        # Write the character and pause
         lcd.write_string(char)
         col += 1
         time.sleep(typing_delay)
 
 def run_animation_loop():
-    """Loop through messages with typing animation"""
-    try:
-        while True:
-            for message in messages:
-                # Type out the message
-                type_message(message)
-                
-                # Display completed message for 5 seconds
-                time.sleep(5)
-                
-                # Clear screen for next message
-                lcd.clear()
-                
-    except KeyboardInterrupt:
-        print("Animation stopped by user")
-        lcd.clear()
-        lcd.close()
-    except Exception as e:
-        print(f"Error: {e}")
-        lcd.clear()
-        lcd.close()
+    while True:
+        for message in messages:
+            type_message(message)
+            time.sleep(5)
+            lcd.clear()
 
-# Start the animation loop
 if __name__ == "__main__":
     try:
         print("Starting LCD typing animation. Press CTRL+C to stop.")
         run_animation_loop()
+    except KeyboardInterrupt:
+        print("Animation stopped by user")
+    except Exception as e:
+        print(f"Error: {e}")
     finally:
-        # Make sure we clean up
         lcd.clear()
         lcd.close()
