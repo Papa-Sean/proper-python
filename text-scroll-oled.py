@@ -24,7 +24,7 @@ def chunk_message(large_message, width=16, rows=2):
         chunks.append("".join(lines).strip())
     return chunks
 
-long_text = "What up doe? This is a long message that will be split into smaller chunks to fit on the LCD screen and it will be displayed on an smol screen!" 
+long_text = "You like the display, the display is cool eh!" 
 messages = chunk_message(long_text)
 
 def type_message(message, typing_delay=0.1):
