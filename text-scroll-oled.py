@@ -43,7 +43,7 @@ def run_animation_loop():
     while True:
         for message in messages:
             type_message(message)
-            time.sleep(5)
+            time.sleep(2)
             lcd.clear()
 
 if __name__ == "__main__":
