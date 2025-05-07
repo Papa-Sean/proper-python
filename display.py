@@ -23,7 +23,7 @@ def main():
             message, 
             fill="white", 
             font=proportional(CP437_FONT), 
-            scroll_delay=0.07
+            scroll_delay=0.06
         )
         time.sleep(1)
 
