@@ -11,10 +11,7 @@ def main():
     device.contrast(0x80)
 
     message = (
-        "Welcome Uncle Mike and Aunt Trish! "
-        "New WiFi password: "
-        "trump2028"
-        "... Don't laugh, this is going to save our lives!"
+        "Your website lives here! Pretty neat, eh?"
     )
 
     while True:
